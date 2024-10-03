@@ -7,9 +7,6 @@ import codecs
 from secret import map_key
 
 
-apikey = map_key
-
-
 def fetch_coordinates(apikey, address):
     base_url = "https://geocode-maps.yandex.ru/1.x"
     response = requests.get(base_url, params={
@@ -33,6 +30,7 @@ def get_min_distanse_coffe_shop(coffe_slovar):
 
 
 def main():
+    apikey = map_key
     place = input('Где вы находитесь? ')
     longitude_my, latitude_my = fetch_coordinates(apikey, place)
     my_place = latitude_my, longitude_my
